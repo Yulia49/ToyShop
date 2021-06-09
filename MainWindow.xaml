@@ -1,0 +1,162 @@
+﻿<Window x:Class="shop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shop"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Menu" Height="750" Width="1000" WindowStyle="ThreeDBorderWindow">
+    <DockPanel LastChildFill="True" Background="#56cbf9">
+        <Canvas x:Name="TopMenu" DockPanel.Dock ="Top" MinHeight="130" Background="#56cbf9">
+            <Button x:Name="ButtonStaff" Click="ButtonStaff_Click"  MinHeight="30" MinWidth="50" Foreground="#4B0082" Canvas.Top="15" Canvas.Right="30" Style="{StaticResource MaterialDesignFlatButton}" Content=" Staff"/>
+            <StackPanel Orientation="Horizontal" Canvas.Top="20" Canvas.Left="30">
+                <TextBox x:Name="SearchToy" MinWidth="150" MinHeight="30" Background="LightSkyBlue" Foreground="#4B0082" TextWrapping="Wrap"></TextBox>
+                <Button x:Name="ButtonSearch" Click="ButtonSearch_Click" MinWidth="50" Background="#b388eb" BorderBrush="#4B0082" Content="Search"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Canvas.Bottom="15" Canvas.Left="30">
+
+                <ComboBox x:Name="CategoryList" IsEditable="True" IsReadOnly ="True" MinWidth="100" Text="Category" SelectionChanged="CategoryChanged" Foreground="#4B0082" FontWeight="Bold" BorderBrush="#4B0082">
+                    <ComboBoxItem> all</ComboBoxItem>
+                    <ComboBoxItem>Soft</ComboBoxItem>
+                    <ComboBoxItem>Robots</ComboBoxItem>
+                    <ComboBoxItem>Antistress</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </Canvas>
+        <StackPanel x:Name="BottomMenu" DockPanel.Dock ="Bottom" MinHeight="80" Background="#56cbf9">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Height="auto" Margin="0 10 30 0">
+                <Button x:Name="PreviousPage" Click="PreviousPage_Click" MinHeight="30" Content="Previous Page" BorderBrush="#4B0082"  Background="#b388eb"/>
+                <Button x:Name="NextPage" Click="NextPage_Click" MinHeight="20" Content="Next Page" BorderBrush="#4B0082" Background="#b388eb"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                
+                <TextBlock x:Name="NowPage" FontSize="10" Foreground="#4B0082" FontWeight="Bold" />
+                <TextBlock x:Name="Allpages" FontSize="10" Foreground="#4B0082" FontWeight="Bold" />
+            </StackPanel>
+        </StackPanel>
+        <Grid ShowGridLines="False" Margin="20 0 20 0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Grid.Row="0" x:Name="Item1" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel LastChildFill="True">
+                    <Button x:Name="ToyInfo1" Click="ToyInfo1_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice1" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName1" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage1" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="0" x:Name="Item2" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel >
+                    <Button x:Name="ToyInfo2" Click="ToyInfo2_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice2" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName2" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage2" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="0" x:Name="Item3" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel >
+                    <Button x:Name="ToyInfo3" Click="ToyInfo3_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice3" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName3" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage3" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="0" x:Name="Item4" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel >
+                    <Button x:Name="ToyInfo4" Click="ToyInfo4_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice4" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName4" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage4" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="0" x:Name="Item5" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel>
+                    <Button x:Name="ToyInfo5" Click="ToyInfo5_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice5" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName5" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage5" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="0" Grid.Row="1" x:Name="Item6" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel >
+                    <Button x:Name="ToyInfo6" Click="ToyInfo6_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice6" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName6" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage6" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1" x:Name="Item7" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel >
+                    <Button x:Name="ToyInfo7" Click="ToyInfo7_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice7" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName7" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage7" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="1" x:Name="Item8" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel>
+                    <Button x:Name="ToyInfo8" Click="ToyInfo8_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice8" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName8" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage8" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="1" x:Name="Item9" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel >
+                    <Button x:Name="ToyInfo9" Click="ToyInfo9_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice9" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName9" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage9" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="1" x:Name="Item10" Background="White" Height="Auto" Width="Auto" Margin="10" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#0000CD" ShadowDepth="0"/>
+                </Border.Effect>
+                <DockPanel >
+                    <Button x:Name="ToyInfo10" Click="ToyInfo10_Click" DockPanel.Dock="Bottom" Content="More information" BorderBrush="#800080" Background="#ff729f" Margin="0 5 0 0"></Button>
+                    <TextBlock x:Name="ToyPrice10" DockPanel.Dock="Bottom" TextAlignment="Center" FontWeight="Bold" Margin="0 5 0 0"></TextBlock>
+                    <TextBlock x:Name="ToyName10" DockPanel.Dock="Bottom" TextAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                    <Image x:Name="ToyImage10" Margin="0 10 0 5"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

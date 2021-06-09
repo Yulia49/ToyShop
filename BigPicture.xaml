@@ -1,0 +1,17 @@
+﻿<Window x:Class="shop.BigPicture"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shop"
+        mc:Ignorable="d"
+        Title="BigPicture" Height="900" Width="750" WindowStyle="ToolWindow">
+    <Grid Background="#56cbf9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="BackToMenu" Click="BackToToy_Click" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#4B0082" MaxHeight="30" Style="{StaticResource MaterialDesignFlatButton}"></Button>
+        <Image x:Name="toybig" MaxHeight="750" MaxWidth="650" Grid.ColumnSpan="2" Margin="0,0,0,0.4"/>
+    </Grid>
+</Window>
